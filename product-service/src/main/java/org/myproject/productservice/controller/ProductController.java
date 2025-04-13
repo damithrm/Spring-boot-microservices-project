@@ -16,6 +16,11 @@ public class ProductController {
 
     private final ProductService productService;
 
+    @GetMapping("/ping")
+    public String ping() {
+        return "Product Service is reachable!";
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createProduct(@RequestBody ProductRequest productRequest) {
